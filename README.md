@@ -1,2 +1,18 @@
-# network-automation-toolkit
-High-performance asynchronous toolkit for infrastructure monitoring, network auditing, and automated telemetry collection with Docker-ready orchestration.
+# Network Automation Toolkit
+
+Высокопроизводительный асинхронный инструмент для мониторинга и аудита сетевой инфраструктуры в контейнеризированном окружении.
+
+### Технические особенности:
+- **High Concurrency:** Использование `asyncio.Semaphore` для безопасного параллельного опроса большого количества узлов.
+- **Latency Tracking:** Замер задержки (RTT) для каждого узла с автоматической фиксацией таймаутов.
+- **Infrastructure as Code:** Готовая конфигурация Docker и Docker-compose для быстрого развертывания.
+- **Telemetry:** Автоматический экспорт результатов аудита в JSON-логи.
+
+### Архитектура:
+- **App:** Асинхронный Python-аудитор.
+- **DB:** Инфраструктурная база данных PostgreSQL для хранения метрик.
+
+### Развертывание:
+```bash
+# Сборка и запуск всей инфраструктуры одной командой
+docker-compose up --build -d
